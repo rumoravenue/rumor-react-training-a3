@@ -6,20 +6,26 @@
  * - Exports a Provider
  * - Exports a hook to consume the context
  */
-import { PropsWithChildren, createContext, useContext } from 'react'
+import { PropsWithChildren, createContext, useContext, useState } from 'react'
 
 /** Define the typings for your context */
 type SampleContextProps = {
-  sampleProp: string
+  sampleProp: number
+  setSampleProp: (newValue: number) => void
 }
 
 /** Create the context */
-const SampleContext = createContext<SampleContextProps | null>(null)
+const SampleContext = createContext<SampleContextProps>({
+  sampleProp: 1,
+  setSampleProp: () => {},
+})
 
 /** Create the Provider for your context */
 export const SampleProvider = ({ children }: PropsWithChildren) => {
+  const [sampleProp, setSampleProp] = useState<number>(1)
+
   return (
-    <SampleContext.Provider value={{ sampleProp: 'sampleValue' }}>
+    <SampleContext.Provider value={{ sampleProp, setSampleProp }}>
       {children}
     </SampleContext.Provider>
   )

@@ -5,7 +5,7 @@ import ChapterLayout from './ChapterLayout'
 import Chapter1 from './chapters/chapter1'
 import Chapter2 from './chapters/chapter2'
 import Chapter3 from './chapters/chapter3'
-import Chapter4 from './chapters/chapter4'
+import Chapter4 from './chapters/misc'
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -53,15 +53,15 @@ export const App = () => (
             <Route
               path="chapter3"
               element={
-                <ChapterLayout title="Chapter 3 - TBD">
+                <ChapterLayout title="Chapter 3 - Ref Forwarding">
                   <Chapter3 />
                 </ChapterLayout>
               }
             />
             <Route
-              path="chapter4"
+              path="misc"
               element={
-                <ChapterLayout title="Chapter 4 - TBD">
+                <ChapterLayout title="Misc">
                   <Chapter4 />
                 </ChapterLayout>
               }

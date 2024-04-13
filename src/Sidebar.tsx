@@ -31,8 +31,8 @@ const Sidebar = () => {
       <Link as={ReactRouterLink} to="/chapter3">
         Chapter 3
       </Link>
-      <Link as={ReactRouterLink} to="/chapter4">
-        Chapter 4
+      <Link as={ReactRouterLink} to="/misc">
+        Misc
       </Link>
     </VStack>
   )

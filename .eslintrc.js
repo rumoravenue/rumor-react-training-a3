@@ -8,12 +8,8 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.js', './src/serviceWorker.ts'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'prettier', 'unused-imports'],
+  plugins: ['prettier', 'unused-imports'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
     'prettier/prettier': 'warn',
     'no-unused-vars': 'warn',
     'unused-imports/no-unused-imports': 'warn',

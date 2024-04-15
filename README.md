@@ -1,20 +1,29 @@
-# Adavanced React
+# Advanced React
 
-Hi, the goal of this repo is to provide some of the code snippets so that you can work alongside the Videos and Content provided in the chapters.
+## Overview
+This is a follow along repo where you can follow and explore while going through Advanced React Module.
 
-## Available Scripts
+##  Figma
+Use [the figma](https://www.figma.com/file/16Lt0Ll4nTwDqVIlOH0o9C/React-Practical---01?type=design&node-id=115%3A834&mode=design&t=u3muyn7FKS8kJ010-1) to see the details of the design. **Follow this design as closely as possible**. 
 
-In the project directory, you can run:
+## Getting Started 
 
-### `yarn`
-To initialize the project and `node_modules`
+Clone this repository using 
+```bash
+git clone https://github.com/rumoravenue/rumor-react-training-a3.git
+```
 
-### `yarn start`
+Make a branch for yourself using
+```bash
+git checkout -b <your-name>
+```
 
-Runs the app in the development mode.<br /> Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open the file in VSCode, and you can now open `index.html` in your browser. 
 
-The page will reload if you make edits.<br /> You will also see any lint errors
-in the console.
-
-
+## Submission
+After you complete each part, submit your assignment by completing the following:
+- Open a pull request on the Github repository from your branch to main: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request 
+- Record a video demo using Loom: https://www.loom.com/community/how-to-record-your-first-video
+- Submit a link to your video demo and a link to the pull request to the Google Form in Google Classroom for this module. 
+d saved to local storage
+  - When I reload the page, the new items added to the list should still show up.

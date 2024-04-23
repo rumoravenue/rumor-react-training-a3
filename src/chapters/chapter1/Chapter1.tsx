@@ -1,15 +1,19 @@
-import { Box, VStack } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import ListItem from './components/ListItem'
+import dataList from './dataList'
 
 const Chapter1 = () => {
   return (
     <Box>
-      <VStack alignItems="flex-start">
-        <ListItem title="List item" />
-        <ListItem title="List item" />
-        <ListItem title="List item" />
-        <ListItem title="List item" />
-      </VStack>
+      {dataList.map((data, index) => (
+        <ListItem
+          key={index}
+          avatarUrl={data.avatarUrl}
+          mediaUrl={data.mediaUrl}
+          title={data.title}
+          description={data.description}
+        />
+      ))}
     </Box>
   )
 }

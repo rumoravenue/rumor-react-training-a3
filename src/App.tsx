@@ -4,7 +4,7 @@ import Sidebar from './Sidebar'
 import ChapterLayout from './ChapterLayout'
 import Chapter1 from './chapters/chapter1'
 import Chapter2 from './chapters/chapter2'
-import Chapter3 from './chapters/chapter3'
+import Chapter3 from './chapters/chapter3/Chapter3'
 import Chapter4 from './chapters/misc'
 
 export const App = () => (

@@ -1,25 +1,33 @@
-import { Box, Button } from '@chakra-ui/react'
-import Input from './components/Input'
-import { useRef } from 'react'
+import React, { useRef } from 'react';
+import { Box, Button, VStack, HStack } from '@chakra-ui/react';
+import Video from './components/Input';
 
-const Chapter3 = () => {
-  /**
-   * Tell useRef to expect HTMLInputRef
-   */
-  const inputRef = useRef<HTMLInputElement>(null)
-  const handleFocusClick = () => inputRef.current && inputRef.current.focus()
+const Chapter3: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handlePause = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
 
   return (
-    <Box>
-      <Input
-        /** Input component will forward the DOM node ref to this ref */
-        ref={inputRef}
-        label="Enter your name"
-        placeholder="Enter your name"
-      />
-      <Button onClick={handleFocusClick}>Focus</Button>
-    </Box>
-  )
-}
+    <VStack align="start" spacing={4}>
+      <Box w="70%">
+        <Video ref={videoRef} src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+      </Box>
+      <HStack spacing={4}>
+        <Button onClick={handlePlay}>Play</Button>
+        <Button onClick={handlePause}>Pause</Button>
+      </HStack>
+    </VStack>
+  );
+};
 
-export default Chapter3
+export default Chapter3;

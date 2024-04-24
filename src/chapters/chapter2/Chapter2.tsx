@@ -1,28 +1,35 @@
-import { Box, Button, Text } from '@chakra-ui/react'
-import { SampleProvider, useSampleContext } from './SampleProvider'
+import React from 'react'
+import { MediaProvider } from './SampleProvider'
+import {MediaPlayer} from './MediaPlayer'
+import { VStack } from '@chakra-ui/react'
 
-const Chapter2 = () => {
-  const { sampleProp, setSampleProp } = useSampleContext()
+const Chapter2: React.FC = () => {
   return (
-    <Box>
-      <Text>Sample Prop : {sampleProp}</Text>
-      <Button onClick={() => setSampleProp(sampleProp + 1)}>
-        Increment State
-      </Button>
-      <Button onClick={() => setSampleProp(sampleProp - 1)}>
-        Decrement State
-      </Button>
-    </Box>
+    <MediaProvider>
+      <VStack align="start" spacing={4}>
+        <MediaPlayer
+          id="video1"
+          mediaType="video"
+          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        />
+        <MediaPlayer
+          id="video2"
+          mediaType="video"
+          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        />
+        <MediaPlayer
+          id="audio1"
+          mediaType="audio"
+          src="http://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand3.wav"
+        />
+        <MediaPlayer
+          id="audio2"
+          mediaType="audio"
+          src="http://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand3.wav"
+        />
+      </VStack>
+    </MediaProvider>
   )
 }
 
-/** Since chapter 2 need to use the context, provider should be in the parent of the Chapter 2 */
-export const Chapter2WithProvider = () => {
-  return (
-    <SampleProvider>
-      <Chapter2 />
-    </SampleProvider>
-  )
-}
-
-export default Chapter2WithProvider
+export default Chapter2

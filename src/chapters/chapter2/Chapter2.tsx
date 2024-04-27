@@ -1,27 +1,30 @@
-import { Box, Button, Text } from '@chakra-ui/react'
-import { SampleProvider, useSampleContext } from './SampleProvider'
+import {Flex} from '@chakra-ui/react'
+
+import { MediaContextProvider } from './MediaContext'
+import Block1 from './Block1'
+import Block2 from './Block2'
+import Block3 from './Block3'
+import Block4 from './Block4'
 
 const Chapter2 = () => {
-  const { sampleProp, setSampleProp } = useSampleContext()
   return (
-    <Box>
-      <Text>Sample Prop : {sampleProp}</Text>
-      <Button onClick={() => setSampleProp(sampleProp + 1)}>
-        Increment State
-      </Button>
-      <Button onClick={() => setSampleProp(sampleProp - 1)}>
-        Decrement State
-      </Button>
-    </Box>
+    <>
+      <Flex wrap='wrap' gap='30'>
+        <Block1 />
+        <Block2 />
+        <Block3 />
+        <Block4/>
+      </Flex>
+    </>
   )
 }
 
 /** Since chapter 2 need to use the context, provider should be in the parent of the Chapter 2 */
 export const Chapter2WithProvider = () => {
   return (
-    <SampleProvider>
+    <MediaContextProvider>
       <Chapter2 />
-    </SampleProvider>
+    </MediaContextProvider>
   )
 }
 

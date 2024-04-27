@@ -3,9 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import ChapterLayout from './ChapterLayout'
 import Chapter1 from './chapters/chapter1'
-import Chapter2 from './chapters/chapter2'
+
 import Chapter3 from './chapters/chapter3'
 import Chapter4 from './chapters/misc'
+import Chapter2WithProvider from './chapters/chapter2/Chapter2'
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -46,7 +47,7 @@ export const App = () => (
               path="chapter2"
               element={
                 <ChapterLayout title="Chapter 2 - Context API">
-                  <Chapter2 />
+                  <Chapter2WithProvider />
                 </ChapterLayout>
               }
             />

@@ -16,13 +16,13 @@ type SampleContextProps = {
 
 /** Create the context */
 const SampleContext = createContext<SampleContextProps>({
-  sampleProp: 1,
+  sampleProp: 0,
   setSampleProp: () => {},
 })
 
 /** Create the Provider for your context */
 export const SampleProvider = ({ children }: PropsWithChildren) => {
-  const [sampleProp, setSampleProp] = useState<number>(1)
+  const [sampleProp, setSampleProp] = useState<number>(2)
 
   return (
     <SampleContext.Provider value={{ sampleProp, setSampleProp }}>

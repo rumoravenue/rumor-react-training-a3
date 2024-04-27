@@ -13,8 +13,8 @@ const JobTitle: React.FC<JobTitleProps> = ({ onChange }) => {
   return (
     <VStack>
        <Flex flexDirection="row" width='xl' align='center' mb='4'>
-       <Text width='40%'>Insert Title:</Text>
-        <Input placeholder="Basic usage" onChange={handleChange} />
+       <Text width='40%'>Enter Your Job Title : </Text>
+        <Input placeholder="Enter Your Job Title" onChange={handleChange} />
       </Flex>
     </VStack>
   );

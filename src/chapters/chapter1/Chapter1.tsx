@@ -18,7 +18,8 @@ const Chapter1 = () => {
         <Box>
           <Photo onChange={setPhoto} />
           <JobTitle onChange={setJobTitle} />
-          <Avatar onChange={setAvatar} /> <Description onChange={setDesc} />
+          <Description onChange={setDesc} />
+          <Avatar onChange={setAvatar} /> 
         </Box>
         <Box>
           <Customcard

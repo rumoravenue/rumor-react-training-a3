@@ -1,23 +1,12 @@
-import { Input, InputProps, VStack } from '@chakra-ui/react'
-import React, { ForwardRefRenderFunction } from 'react'
+import React, { forwardRef } from 'react';
 
-/**
- * By extending these props
- * our Input component would start accepting
- * all the props that are supported by Chakra Input element
- */
-interface IProps extends InputProps {
-  label?: string
+interface VideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
+  src: string;
 }
 
-const ForwardRefInput: ForwardRefRenderFunction<HTMLInputElement, IProps> = (
-  { label, ...props },
-  ref
-) => (
-  <VStack alignItems="flex-start">
-    {label ? <label>{label}</label> : null}
-    <Input ref={ref} {...props} />
-  </VStack>
-)
+const Video = forwardRef<HTMLVideoElement, VideoProps>(({ src, ...restProps }, ref) => {
+  return <video controls ref={ref} src={src} {...restProps} />;
+});
 
-export default React.forwardRef(ForwardRefInput)
+export default Video;
+
